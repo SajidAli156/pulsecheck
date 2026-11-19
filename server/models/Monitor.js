@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const monitorSchema = new mongoose.Schema(
@@ -41,7 +40,10 @@ const monitorSchema = new mongoose.Schema(
       type: Number,
       default: null,
     },
-
+    lastErrorMessage: {
+      type: String,
+      default: null,
+    },
     lastCheckedAt: {
       type: Date,
       default: null,
@@ -49,7 +51,7 @@ const monitorSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Monitor = mongoose.model("Monitor", monitorSchema);
